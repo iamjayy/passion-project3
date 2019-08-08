@@ -9,17 +9,17 @@ class Landing extends Component {
         <Grid className="landing-grid">
           <Cell col={12}>
             <img
-              src="https://www.shareicon.net/download/2015/09/18/103157_man_512x512.png"
+              src="https://www.shareicon.net/data/256x256/2017/07/13/888380_business_512x512.png"
               alt="avatar"
               className="avatar-img"
               />
 
             <div className="banner-text">
-              <h1>Full Stack Web Developer</h1>
+              <h1>TITLE OF PAGE HERE</h1>
 
             <hr/>
 
-          <p>HTML/CSS | Bootstrap | JavaScript | React | React Native | NodeJS | Express | MongoDB</p>
+          <p>DESCRIPTION HERE</p>
 
         <div className="social-links">
 
