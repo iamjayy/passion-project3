@@ -15,35 +15,19 @@ class Landing extends Component {
               />
 
             <div className="banner-text">
-              <h1>TITLE OF PAGE HERE</h1>
+              <h1>Learn || Build || Teach</h1>
 
             <hr/>
 
-          <p>DESCRIPTION HERE</p>
+          <p>students / mentors </p>
 
-        <div className="social-links">
 
-          {/* LinkedIn */}
-          <a href="http://google.com" rel="noopener noreferrer" target="_blank">
-            <i className="fa fa-linkedin-square" aria-hidden="true" />
-          </a>
+                  {/* quote api here */}
+              <div> 
 
-          {/* Github */}
-          <a href="https://github.com/iamjayy" rel="noopener noreferrer" target="_blank">
-            <i className="fa fa-github-square" aria-hidden="true" />
-          </a>
 
-          {/* Freecodecamp */}
-          <a href="http://google.com" rel="noopener noreferrer" target="_blank">
-            <i className="fa fa-free-code-camp" aria-hidden="true" />
-          </a>
 
-          {/* Youtube */}
-          <a href="http://google.com" rel="noopener noreferrer" target="_blank">
-            <i className="fa fa-youtube-square" aria-hidden="true" />
-          </a>
-
-        </div>
+              </div>
             </div>
           </Cell>
         </Grid>
