@@ -6,7 +6,8 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       validate: {
         len: [1]
-      },
+      }
+    },
       title: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -21,7 +22,7 @@ module.exports = function (sequelize, DataTypes) {
           len: [1]
         }
       }
-    }
+    
   });
 
   Post.associate = function (models) {

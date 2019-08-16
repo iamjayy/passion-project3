@@ -13,12 +13,12 @@ var db = require("../models");
 module.exports = function (app) {
 
   // GET route for getting all of the posts by keyword
-  app.get("/api/posts", function (req, res) {
+  app.get("/api/fav", function (req, res) {
 
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Mentor
-    db.Post.findAll({
+    db.Favorite.findAll({
       where: {},
       // include: [db.Mentor],
     }).then(function (dbPost) {
@@ -27,34 +27,21 @@ module.exports = function (app) {
   });
 
   // POST route for saving a new post
-  app.post("/api/posts", function (req, res) {
+  app.post("/api/fav", function (req, res) {
     // post is table 
-    db.Post.create(req.body).then(function (dbPost) {
+    db.Favorite.create(req.body).then(function (dbPost) {
       res.json(dbPost);
     });
   });
 
   // DELETE route for deleting posts
-  app.delete("/api/posts/:id", function (req, res) {
-    db.Post.destroy({
+  app.delete("/api/fav/:id", function (req, res) {
+    db.Favorite.destroy({
       where: {
         id: req.params.id
       }
     }).then(function (dbPost) {
       res.json(dbPost);
     });
-  });
-
-  // PUT route for updating posts
-  app.put("/api/posts", function (req, res) {
-    db.Post.update(
-      req.body,
-      {
-        where: {
-          id: req.body.id
-        }
-      }).then(function (dbPost) {
-        res.json(dbPost);
-      });
   });
 };
