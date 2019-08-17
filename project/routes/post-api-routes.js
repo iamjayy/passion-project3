@@ -7,54 +7,50 @@
 
 // Requiring our models
 var db = require("../models");
-
+const Sequelize = require('sequelize');
 // Routes
 // =============================================================
 module.exports = function (app) {
-
+  
   // GET route for getting all of the posts by keyword
   app.get("/api/posts", function (req, res) {
-
+    const Op = Sequelize.Op;
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Mentor
     db.Post.findAll({
       where: {
-        $or: [
-          {
-            title:
-            {
-              $like: searchQuery
-            }
+        [Op.or]: {
+          '$post.title$': {
+            [Op.like]: "%Tyler%"
           },
-          {
-            body:
-            {
-              $like: searchQuery
-            }
+          '$post.body$': {
+            [Op.like]: "%Tyler%"
+          },
+          '$mentor.fullName$': {
+            [Op.like]: "%Tyler%"
           }
-        ]
-      },
-      // include: [db.Mentor],
-      include: [{
-        model: Mentor,
-        where: {
-          $or: [
-            {
-              firstName:
-              {
-                $like: searchQuery
-              }
-            },
-            {
-              lastName:
-              {
-                $like: searchQuery
-              }
-            }
-          ]
         }
+      },
+      include: [{
+        model: db.Mentor,
+      
       }]
+    }).then(function (dbPost) {
+      console.log(dbPost);
+      res.json(dbPost);
+    }).catch(function(err){
+      console.log(err);
+    });
+  });
+
+  // Finding all posts by an author
+  app.post("/api/posts", function (req, res) {
+    // post is table 
+    db.Post.findAll({
+      where: {
+        MentorId: userReq
+      }
     }).then(function (dbPost) {
       res.json(dbPost);
     });

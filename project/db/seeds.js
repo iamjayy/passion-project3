@@ -1,16 +1,26 @@
 var db = require("../models");
 
 // --Mentors--
-db.Mentor.create(
-    {
-        fullName: "Tyler Williams",
-        phone: "1800TYLERW",
-        email: "tylerw@gmail.com",
-        password: "tylerw",
-        school: "UCF",
-        skills: "React",
-        passion: "Helping people",
-    });
+// db.Mentor.create(
+//     {
+//         fullName: "Tyler Williams",
+//         phone: "1800TYLERW",
+//         email: "tylerw@gmail.com",
+//         password: "tylerw",
+//         school: "UCF",
+//         skills: "React",
+//         passion: "Helping people"
+//     });
+    // db.Mentor.create(
+    //     {
+    //         fullName: "Jason T",
+    //         phone: "1800JASONT",
+    //         email: "jasont@gmail.com",
+    //         password: "jasont",
+    //         school: "UCF",
+    //         skills: "JS",
+    //         passion: "Helping others",
+    //     });
 // db.Mentor.create(
 //     {
 //         id: 2,
@@ -40,13 +50,13 @@ db.Mentor.create(
 //         password: "mikek",
 //     });
 // --Posts
-// db.Post.create(
-//     {
-//         MentorId: 1,
-//         price: "20",
-//         title: "College Softball Scout",
-//         body: "Hello my name is Tyler i love sports. I'm a scout for the University of Central Florida's Knights softball team offering batting lessons 20/hr",
-//     });
+db.Post.create(
+    {
+        MentorId: 1,
+        price: "20",
+        title: "College Softball Scout",
+        body: "Hello my name is Tyler i love sports. I'm a scout for the University of Central Florida's Knights softball team offering batting lessons 20/hr",
+    });
 // db.Post.create(
 //     {
 //         MentorId: 2,
