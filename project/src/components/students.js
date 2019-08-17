@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Grid, Cell } from 'react-mdl';
+import { Grid, Cell, Button } from 'react-mdl';
 import Education from './education';
 import Experience from './experience';
 import Skills from './skills';
 
+
 class Students extends Component {
+    
     render() {
         return (
             <div>
@@ -35,6 +37,9 @@ class Students extends Component {
                             <h5>web</h5>
                             <p>mywebsite.some</p>
                             <hr style={{ borderTop: '3px solid #833fb2', width: '50%' }} />
+
+                            <Button> Create New Post </Button>
+
                         </div>
 
                     </Cell>
